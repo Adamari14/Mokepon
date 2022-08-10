@@ -1,8 +1,9 @@
-let ataquejugador //variable global
+let ataqueJugador //variable global
+let ataqueEnemigo
 
 function iniciarJuego(){ 
-    let botonMascotaJuador = document.getElementById('boton-mascota') //llamar el argumento en html
-    botonMascotaJuador.addEventListener('click' , seleccionarMascotaJugador) //evento , funcion
+    let botonMascotaJugador = document.getElementById('boton-mascota') //llamar el argumento en html
+    botonMascotaJugador.addEventListener('click' , seleccionarMascotaJugador) //evento , funcion
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.addEventListener('click' , ataqueFuego)
@@ -34,12 +35,12 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo(){
-    let ataqueAleatorio = aleatorio(1,3)
+    let mascotaAleatoria = aleatorio(1,3)
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo') //cambio de nombre dinamico mascota-enemigo
 
-    if(ataqueAleatorio == 1){ //Manipulando DOM nombre de mascota-enemigo
+    if(mascotaAleatoria == 1){ //Manipulando DOM nombre de mascota-enemigo
         spanMascotaEnemigo.innerHTML = 'Hipodoge'
-    } else if (ataqueAleatorio == 2){
+    } else if (mascotaAleatoria == 2){
         spanMascotaEnemigo.innerHTML = 'Capipepo'
     } else {
         spanMascotaEnemigo.innerHTML = 'Ratigueya'
@@ -47,18 +48,31 @@ function seleccionarMascotaEnemigo(){
 }
 
 function ataqueFuego(){
-    ataquejugador = "FUEGO"
-    alert(ataquejugador)
+    ataqueJugador = 'FUEGO'
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua(){
-    ataquejugador = "AGUA"
-    alert(ataquejugador)
+    ataqueJugador = 'AGUA'
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra(){
-    ataquejugador = "TIERRA"
-    alert(ataquejugador)
+    ataqueJugador = 'TIERRA'
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAleatorioEnemigo(){
+    let ataqueAleatorio = aleatorio(1,3)
+
+    if (ataqueAleatorio == 1) {
+        ataqueEnemigo = 'FUEGO'
+    } else if (ataqueAleatorio == 2) {
+        ataqueEnemigo = 'AGUA'
+    } else {
+        ataqueEnemigo = 'TIERRA'
+    }
+    
 }
 
 function aleatorio(min,max){ //numeros aleatorios
