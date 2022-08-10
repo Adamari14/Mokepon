@@ -1,6 +1,17 @@
+let ataquejugador //variable global
+
 function iniciarJuego(){ 
     let botonMascotaJuador = document.getElementById('boton-mascota') //llamar el argumento en html
     botonMascotaJuador.addEventListener('click' , seleccionarMascotaJugador) //evento , funcion
+
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.addEventListener('click' , ataqueFuego)
+
+    let botonAgua = document.getElementById('boton-agua')
+    botonAgua.addEventListener('click' , ataqueAgua)
+
+    let botonTierra = document.getElementById('boton-tierra')
+    botonTierra.addEventListener('click' , ataqueTierra)
 }
 
 function seleccionarMascotaJugador() {
@@ -33,6 +44,21 @@ function seleccionarMascotaEnemigo(){
     } else {
         spanMascotaEnemigo.innerHTML = 'Ratigueya'
     } 
+}
+
+function ataqueFuego(){
+    ataquejugador = "FUEGO"
+    alert(ataquejugador)
+}
+
+function ataqueAgua(){
+    ataquejugador = "AGUA"
+    alert(ataquejugador)
+}
+
+function ataqueTierra(){
+    ataquejugador = "TIERRA"
+    alert(ataquejugador)
 }
 
 function aleatorio(min,max){ //numeros aleatorios
