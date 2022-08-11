@@ -3,7 +3,7 @@ let ataqueEnemigo
 let vidasJugador = 3 //para contador de vidas
 let vidasEnemigo = 3
 
-function iniciarJuego(){ 
+function iniciarJuego(){ //llamado de eventos
     let botonMascotaJugador = document.getElementById('boton-mascota') //llamar el argumento en html
     botonMascotaJugador.addEventListener('click' , seleccionarMascotaJugador) //evento , funcion
 
@@ -15,6 +15,9 @@ function iniciarJuego(){
 
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click' , ataqueTierra)
+
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function seleccionarMascotaJugador() {
@@ -134,7 +137,22 @@ function crearMensajeFinal(resultadoFinal) {
     parrafo.innerHTML =  resultadoFinal//mensaje dinamico
 
     sectionMensajes.appendChild(parrafo) //impresion de mensajes
+
+    let botonFuego = document.getElementById('boton-fuego') //llamado de boton
+    botonFuego.disabled = true //desabilita boton
+
+    let botonAgua = document.getElementById('boton-agua') //llamado de boton
+    botonAgua.disabled = true //desabilita boton
+
+    let botonTierra = document.getElementById('boton-tierra') //llamado de boton
+    botonTierra.disabled = true //desabilita boton
+
 }
+
+function reiniciarJuego() {
+    location.reload() //recargo de pagina
+}
+
 function aleatorio(min,max){ //numeros aleatorios
     return Math.floor(Math.random() * (max - min + 1)+ min)
 }
