@@ -1,6 +1,7 @@
 let ataqueJugador //variable global
 let ataqueEnemigo
 
+
 function iniciarJuego(){ 
     let botonMascotaJugador = document.getElementById('boton-mascota') //llamar el argumento en html
     botonMascotaJugador.addEventListener('click' , seleccionarMascotaJugador) //evento , funcion
@@ -48,17 +49,17 @@ function seleccionarMascotaEnemigo(){
 }
 
 function ataqueFuego(){
-    ataqueJugador = 'FUEGO'
+    ataqueJugador = 'FUEGO 🔥'
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua(){
-    ataqueJugador = 'AGUA'
+    ataqueJugador = 'AGUA 💧'
     ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra(){
-    ataqueJugador = 'TIERRA'
+    ataqueJugador = 'TIERRA 🌱'
     ataqueAleatorioEnemigo()
 }
 
@@ -66,21 +67,39 @@ function ataqueAleatorioEnemigo(){
     let ataqueAleatorio = aleatorio(1,3)
 
     if (ataqueAleatorio == 1) {
-        ataqueEnemigo = 'FUEGO'
+        ataqueEnemigo = 'FUEGO 🔥'
     } else if (ataqueAleatorio == 2) {
-        ataqueEnemigo = 'AGUA'
+        ataqueEnemigo = 'AGUA 💧'
     } else {
-        ataqueEnemigo = 'TIERRA'
+        ataqueEnemigo = 'TIERRA 🌱'
     }
     
-    crearMensaje()
+    combate()
 }
 
-function crearMensaje(){ //Creación de historial de mensajes
+function combate(){
+    if(ataqueEnemigo == ataqueJugador){
+        crearMensaje("EMPATE 😐")
+    } else if(ataqueJugador == 'FUEGO 🔥' && ataqueEnemigo == 'TIERRA 🌱'){
+        crearMensaje("GANASTE 😄")
+        
+    } else if(ataqueJugador == 'AGUA 💧' && ataqueEnemigo == 'FUEGO 🔥'){
+        crearMensaje("GANASTE 😄")
+       
+    } else if(ataqueJugador == 'TIERRA 🌱' && ataqueEnemigo == 'AGUA 💧'){
+        crearMensaje("GANASTE 😄")
+       
+    } else {
+        crearMensaje("PERDISTE 😢")
+       
+    }
+}
+
+function crearMensaje(resultado) { //Creación de historial de mensajes
     let sectionMensajes = document.getElementById('mensajes') //direcciona a donde debe aparecer en html
 
     let parrafo = document.createElement('p') //crea parrafos
-    parrafo.innerHTML = 'Tu mascota atacó con ' +  ataqueJugador + ', la mascosta del enemigo atacó con ' + ataqueEnemigo + ' PENDIENTE ' //mensaje dinamico
+    parrafo.innerHTML = 'Tu mascota atacó con ' +  ataqueJugador + ', la mascosta del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultado //mensaje dinamico
 
     sectionMensajes.appendChild(parrafo) //impresion de mensajes
 }
