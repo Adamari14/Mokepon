@@ -4,6 +4,9 @@ let vidasJugador = 3 //para contador de vidas
 let vidasEnemigo = 3
 
 function iniciarJuego(){ //llamado de eventos
+    let sectionSeleccionarAtaque = document.getElementById('Seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion
+
     let botonMascotaJugador = document.getElementById('boton-mascota') //llamar el argumento en html
     botonMascotaJugador.addEventListener('click' , seleccionarMascotaJugador) //evento , funcion
 
