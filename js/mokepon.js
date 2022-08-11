@@ -1,6 +1,7 @@
 let ataqueJugador //variable global
 let ataqueEnemigo
-
+let vidasJugador = 3 //para contador de vidas
+let vidasEnemigo = 3
 
 function iniciarJuego(){ 
     let botonMascotaJugador = document.getElementById('boton-mascota') //llamar el argumento en html
@@ -78,20 +79,32 @@ function ataqueAleatorioEnemigo(){
 }
 
 function combate(){
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
     if(ataqueEnemigo == ataqueJugador){
         crearMensaje("EMPATE 😐")
+
     } else if(ataqueJugador == 'FUEGO 🔥' && ataqueEnemigo == 'TIERRA 🌱'){
         crearMensaje("GANASTE 😄")
-        
+        vidasEnemigo-- //contador
+        spanVidasEnemigo.innerHTML = vidasEnemigo //cambio dinamico
+
     } else if(ataqueJugador == 'AGUA 💧' && ataqueEnemigo == 'FUEGO 🔥'){
         crearMensaje("GANASTE 😄")
-       
+        vidasEnemigo-- //contador
+        spanVidasEnemigo.innerHTML = vidasEnemigo //cambio dinamico
+
     } else if(ataqueJugador == 'TIERRA 🌱' && ataqueEnemigo == 'AGUA 💧'){
         crearMensaje("GANASTE 😄")
-       
+        vidasEnemigo-- //contador
+        spanVidasEnemigo.innerHTML = vidasEnemigo //cambio dinamico
+
     } else {
         crearMensaje("PERDISTE 😢")
-       
+        vidasJugador-- //contador
+        spanVidasjugador.innerHTML = vidasJugador //cambio dinamico
+
     }
 }
 
@@ -108,4 +121,4 @@ function aleatorio(min,max){ //numeros aleatorios
     return Math.floor(Math.random() * (max - min + 1)+ min)
 }
 
-window.addEventListener('load',iniciarJuego)
+window.addEventListener('load',iniciarJuego) 
