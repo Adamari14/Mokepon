@@ -103,9 +103,19 @@ function combate(){
     } else {
         crearMensaje("PERDISTE 😢")
         vidasJugador-- //contador
-        spanVidasjugador.innerHTML = vidasJugador //cambio dinamico
+        spanVidasJugador.innerHTML = vidasJugador //cambio dinamico
 
     }
+
+    revisarVidas()
+}
+
+function revisarVidas(){
+    if(vidasEnemigo == 0){
+        crearMensajeFinal('FELICITACIONES! GANASTE 🎉')
+    } else if(vidasJugador == 0){
+        crearMensajeFinal('SUERTE PARA LA PROXIMA! PERDISTE 🥺')
+    } 
 }
 
 function crearMensaje(resultado) { //Creación de historial de mensajes
@@ -117,6 +127,14 @@ function crearMensaje(resultado) { //Creación de historial de mensajes
     sectionMensajes.appendChild(parrafo) //impresion de mensajes
 }
 
+function crearMensajeFinal(resultadoFinal) { 
+    let sectionMensajes = document.getElementById('mensajes') //direcciona a donde debe aparecer en html
+
+    let parrafo = document.createElement('p') //crea parrafos
+    parrafo.innerHTML =  resultadoFinal//mensaje dinamico
+
+    sectionMensajes.appendChild(parrafo) //impresion de mensajes
+}
 function aleatorio(min,max){ //numeros aleatorios
     return Math.floor(Math.random() * (max - min + 1)+ min)
 }
