@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 body {
-  font-family: 'Fredoka One', cursive; /*tipo de letra*/
-  background-color: #041562;
+    font-family: 'Poppins', sans-serif; /*tipo de letra*/
+    background-color: #041562;
 }
 
 #Seleccionar-mascota {
@@ -16,7 +16,8 @@ body {
 .titulo {
     color: white;
     font-size: 32px;
-  }
+     font-family: 'Fredoka One', cursive;
+}
   
   .subtitulo {
     color: white;
@@ -55,11 +56,24 @@ body {
     font-family: 'Poppins', sans-serif;
     margin-top: 30px;
 }
-  
-input:checked label {
-    background-color: hotpink;
-}
 
 input {
     display: none;
+}
+
+#Seleccionar-ataque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.boton-de-ataque {
+    background-color: #11468F;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 180px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
 }
