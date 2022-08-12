@@ -5,7 +5,10 @@ let vidasEnemigo = 3
 
 function iniciarJuego(){ //llamado de eventos
     let sectionSeleccionarAtaque = document.getElementById('Seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion
+    sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion, display para visibilidad
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
 
     let botonMascotaJugador = document.getElementById('boton-mascota') //llamar el argumento en html
     botonMascotaJugador.addEventListener('click' , seleccionarMascotaJugador) //evento , funcion
@@ -24,6 +27,13 @@ function iniciarJuego(){ //llamado de eventos
 }
 
 function seleccionarMascotaJugador() {
+    let sectionSeleccionarMascota = document.getElementById('Seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none' //esconde bloque
+    
+    let sectionSeleccionarAtaque = document.getElementById('Seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block' //muestra bloque
+
+    
     let inputHipodoge = document.getElementById('hipodoge') 
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
@@ -149,6 +159,10 @@ function crearMensajeFinal(resultadoFinal) {
 
     let botonTierra = document.getElementById('boton-tierra') //llamado de boton
     botonTierra.disabled = true //desabilita boton
+    
+    
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block' //muestra bloque
 
 }
 
