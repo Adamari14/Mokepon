@@ -1,3 +1,7 @@
-#titulo{ /*Estilizando h1 */
-    color: hotpink;
+/*cssreference.io Para propiedades*/
+.titulo{ /*Estilizando h1 */
+    color: hotpink; /* htmlcolorcodes.com*/
+    width: 290px; /*ancho*/
+    height: 50px; /*alto*/
+    background-color: teal; /*color de fondo*/
 }
