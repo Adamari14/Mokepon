@@ -6,23 +6,9 @@
     background-color: teal; /*color de fondo*/
 }
 
-label {
-    background-color: tomato;
-    width: 290px;
-    height: 50px;
-   
-}
-
-input {
-    background-color: aqua;
-    width: 290px;
-    height: 50px;
-   
-}
-
-button {
-    background-color: violet;
-    width: 290px;
-    height: 50px;
-    
+#Seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
