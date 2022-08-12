@@ -1,27 +1,49 @@
 /*cssreference.io Para propiedades*/
-.titulo{ /*Estilizando h1 */
-    color: hotpink; /* htmlcolorcodes.com*/
-    width: 290px; /*ancho*/
-    height: 50px; /*alto*/
-    background-color: teal; /*color de fondo*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  font-family: 'Fredoka One', cursive;
+  background-color: #041562;
 }
 
-#Seleccionar-mascota {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#seleccionar-mascota {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.titulo {
+    color: white;
+    font-size: 32px;
+  }
+  
+  .subtitulo {
+    color: white;
+    font-size: 20px;
+  }
+  
+  .tarjetas {
+    display: flex;
+    gap: 10px;
+  }
 
 .tarjeta-de-mokepon{
     width: 100px;
     height: 100px;
-    background: aquamarine;
+    background: #11468F;
     padding: 10px;/*borde interno*/
     box-sizing: border-box; /*se adapta al tamaño de la caja*/
-    margin: 10px; /*borde externo*/
-    border: 1px solid hotpink; /*propiedades de borde*/
+    border-radius: 20px; /*borde externo*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
+
+.tarjeta-de-mokepon img {
+    width: 80px;
+  }
 
 input {
     display: none;
