@@ -31,7 +31,7 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none' //esconde bloque
     
     let sectionSeleccionarAtaque = document.getElementById('Seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'block' //muestra bloque
+    sectionSeleccionarAtaque.style.display = 'flex' //muestra bloque
 
     
     let inputHipodoge = document.getElementById('hipodoge') 
