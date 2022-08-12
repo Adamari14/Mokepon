@@ -7,21 +7,31 @@
         <link rel="stylesheet" href="./Styles.css"> <!--enlazar con CSS-->
     </head>
     <body>
-        
 
         <section id="Seleccionar-mascota"> <!--Ejemplo de contenedor tipo padre-->
             <h1 class="titulo">MOKEPON!🔥🌱💧</h1>
             
-            <h2>Elige a tu mascota:</h2> <!--Ejemplo de contenedor tipo hijo-->
+            <h2 class="subtitulo">Elige a tu mascota:</h2> <!--Ejemplo de contenedor tipo hijo-->
 
-            <label class="tarjeta-de-mokepon" for="hipodoge">Hipodoge 💧</label>
+            <div class="tarjetas">
+            <label class="tarjeta-de-mokepon" for="hipodoge">
+                <p>Hipodoge 💧</p>
+                <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hipodoge 💧"> <!--agregar imagen-->
+            </label>
             <input type="radio" name="Mascota" id="hipodoge"/>
 
-            <label class="tarjeta-de-mokepon" for="capipepo">Capipepo 🌱</label>
+            <label class="tarjeta-de-mokepon" for="capipepo">
+                <p>Capipepo 🌱</p>
+                <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="Capipepo 🌱">
+            </label>
             <input type="radio" name="Mascota" id="capipepo"/>
 
-            <label class="tarjeta-de-mokepon" for="ratigueya">Ratigueya 🔥</label>
+            <label class="tarjeta-de-mokepon" for="ratigueya">
+                <p>Ratigueya 🔥</p>
+                <img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="Ratigueya 🔥">
+            </label>
             <input type="radio" name="Mascota" id="ratigueya"/>
+            </div>
 
             <button id="boton-mascota">Seleccionar</button>
             
