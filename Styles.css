@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 body {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', cursive; /*tipo de letra*/
   background-color: #041562;
 }
 
-#seleccionar-mascota {
+#Seleccionar-mascota {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@ body {
   }
 
 .tarjeta-de-mokepon{
-    width: 100px;
+    width: 200px;
     height: 100px;
     background: #11468F;
     padding: 10px;/*borde interno*/
