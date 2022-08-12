@@ -17,10 +17,10 @@
     width: 100px;
     height: 100px;
     background: aquamarine;
-    padding: 10px;
-    box-sizing: border-box;
-    margin: 10px;
-    border: 1px solid hotpink;
+    padding: 10px;/*borde interno*/
+    box-sizing: border-box; /*se adapta al tamaño de la caja*/
+    margin: 10px; /*borde externo*/
+    border: 1px solid hotpink; /*propiedades de borde*/
 }
 
 input {
