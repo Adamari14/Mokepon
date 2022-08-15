@@ -2,7 +2,7 @@
 /*colores https://colorhunt.co/*/
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-html,body {
+html {
   height:100%; /*Se ocupa en 100 de alto*/
   margin:0;
   display: flex;
@@ -10,7 +10,6 @@ html,body {
   font-family: 'Fredoka One', cursive; /*tipo de letra*/
   background-image: linear-gradient(45deg, rgb(140, 52, 199), rgb(255, 0, 106));
 }
-
 
 #Seleccionar-mascota {
   display: flex;
@@ -40,6 +39,7 @@ html,body {
 .tarjeta-de-mokepon{
   width: 200px;
   height: 100px;
+  cursor:pointer;
   background-image: linear-gradient(45deg,#ff8a53,#f3ff49);
   border: 2px solid white;
   padding: 10px;/*borde interno*/
@@ -66,6 +66,7 @@ html,body {
 #boton-mascota {
   width: 180px;
   height: 40px;
+  cursor:pointer;
   border-radius: 20px;
   background: transparent;
   border: 2px solid white;
@@ -104,6 +105,7 @@ input:checked + label {
   width: 180px;
   color: black;
   font-family: cursive;
+  cursor:pointer;
 }
  /*Efecto de interacción*/
 #boton-fuego.boton-de-ataque:hover {
@@ -141,6 +143,7 @@ input:checked + label {
   border: none;
   color: #11468F;
   font-family: 'Poppins', sans-serif;
+  cursor:pointer;
 }
 
 .ataques {
