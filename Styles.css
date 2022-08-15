@@ -98,3 +98,9 @@ input {
   color: #11468F;
   font-family: 'Poppins', sans-serif;
 }
+
+.ataques {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  color: white;
+}
