@@ -21,51 +21,62 @@ html,body {
 }
 
 .titulo {
-    color: white;
-    font-size: 32px;
-    font-family: 'Fredoka One', cursive;
+  color: white;
+  font-size: 32px;
+  font-family: 'Fredoka One', cursive;
 }
   
-  .subtitulo {
-    color: white;
-    font-size: 20px;
-    font-family: monospace;
-  }
-  
-  .tarjetas, .tarjetas-ataques {
-    display: flex;
-    gap: 10px;
-  }
+.subtitulo {
+  color: white;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+.tarjetas, .tarjetas-ataques {
+  display: flex;
+  gap: 10px;
+}
 
 .tarjeta-de-mokepon{
-    width: 200px;
-    height: 100px;
-    background-image: linear-gradient(45deg,#ff8a53,#f3ff49);
-    border: 2px solid white;
-    padding: 10px;/*borde interno*/
-    box-sizing: border-box; /*se adapta al tamaño de la caja*/
-    border-radius: 20px; /*borde externo*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-family: cursive;
-    font-size: 16px;
+  width: 200px;
+  height: 100px;
+  background-image: linear-gradient(45deg,#ff8a53,#f3ff49);
+  border: 2px solid white;
+  padding: 10px;/*borde interno*/
+  box-sizing: border-box; /*se adapta al tamaño de la caja*/
+  border-radius: 20px; /*borde externo*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: cursive;
+  font-size: 16px;
 }
 
 .tarjeta-de-mokepon img {
-    width: 80px;
+  width: 80px;
+}
+
+.tarjeta-de-mokepon:hover { /*interaccion de boton*/
+  background-image: linear-gradient(45deg,transparent,#00ffaa);
+  border: 2px solid goldenrod;
+  color: white;
 }
 
 #boton-mascota {
-    width: 180px;
-    height: 40px;
-    border-radius: 20px;
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    font-family: monospace;
-    margin-top: 30px;
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-family: monospace;
+  margin-top: 30px;
+}
+
+#boton-mascota:hover {
+  background-image: repeating-linear-gradient(90deg,transparent,#00ffaa);
+  border: 2px solid goldenrod;
 }
 
 input {
@@ -78,9 +89,9 @@ input:checked + label {
 }
 
 #Seleccionar-ataque {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
   
 .boton-de-ataque {
@@ -92,6 +103,24 @@ input:checked + label {
   width: 180px;
   color: black;
   font-family: cursive;
+}
+ /*Efecto de interacción*/
+#boton-fuego.boton-de-ataque:hover {
+  background-image: linear-gradient(red,orange);
+  border: 2px solid black;
+  color: white;
+}
+
+#boton-agua.boton-de-ataque:hover {
+  background-image: linear-gradient(aqua,blue);
+  border: 2px solid black;
+  color: white;
+}
+
+#boton-tierra.boton-de-ataque:hover {
+  background-image: linear-gradient( rgb(87, 42, 22),rgb(192, 96, 32));
+  border: 2px solid black;
+  color: white;
 }
 
 #mensajes {
