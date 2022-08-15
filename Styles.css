@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /*tipo de letra*/
-    background-color: rgb(161, 90, 207);
+  font-family: 'Fredoka One', cursive; /*tipo de letra*/
+  background-image: linear-gradient(45deg, rgb(140, 52, 199), rgb(255, 0, 106));
 }
 
 #Seleccionar-mascota {
@@ -33,7 +33,7 @@ body {
 .tarjeta-de-mokepon{
     width: 200px;
     height: 100px;
-    background: palevioletred;
+    background-image: linear-gradient(45deg,#77dd77,#7f4ca5);
     padding: 10px;/*borde interno*/
     box-sizing: border-box; /*se adapta al tamaño de la caja*/
     border-radius: 20px; /*borde externo*/
@@ -43,6 +43,7 @@ body {
     color: black;
     font-family: cursive;
     font-size: 16px;
+    color: 
 }
 
 .tarjeta-de-mokepon img {
