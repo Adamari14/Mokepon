@@ -3,7 +3,6 @@
     <head>
         <meta charset="uft-8" />
         <title>MOKEPON!</title>
-        <script src="./js/mokepon.js"></script> <!--enlazar con documento JavaScript-->
         <link rel="stylesheet" href="./Styles.css"> <!--enlazar con CSS-->
     </head>
     <body>
@@ -14,7 +13,7 @@
             <h2 class="subtitulo">Elige a tu mascota:</h2> <!--Ejemplo de contenedor tipo hijo-->
 
             <div class="tarjetas">
-                <input type="radio" name="Mascota" id="hipodoge"/>
+                <input type="radio" name="Mascota" id="hipodoge"/> <!--input y label (elementos hermanos)-->
                 <label class="tarjeta-de-mokepon" for="hipodoge">
                     <p>Hipodoge 💧</p>
                     <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hipodoge 💧"> <!--agregar imagen-->
@@ -74,5 +73,6 @@
             </div>
 
         </section>
+        <script src="./js/mokepon.js"></script>
     </body>
 </html>
