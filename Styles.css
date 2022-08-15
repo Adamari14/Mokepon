@@ -43,7 +43,6 @@ body {
     color: black;
     font-family: cursive;
     font-size: 16px;
-    color: 
 }
 
 .tarjeta-de-mokepon img {
@@ -87,8 +86,15 @@ input {
   background: #EEEEEE;
   padding: 20px;
   margin-top: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-family: monospace;
+}
+
+#boton-reiniciar {
+  border: none;
+  color: #11468F;
+  font-family: 'Poppins', sans-serif;
 }
