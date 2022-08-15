@@ -31,7 +31,7 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none' //esconde bloque
     
     let sectionSeleccionarAtaque = document.getElementById('Seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'flex' //muestra bloque
+    sectionSeleccionarAtaque.style.display = 'flex' //muestra bloque, bloque flex
 
     
     let inputHipodoge = document.getElementById('hipodoge') 
@@ -135,21 +135,25 @@ function revisarVidas(){
 }
 
 function crearMensaje(resultado) { //Creación de historial de mensajes
-    let sectionMensajes = document.getElementById('mensajes') //direcciona a donde debe aparecer en html
+    let sectionMensajes = document.getElementById('resultado')
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+    
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-    let parrafo = document.createElement('p') //crea parrafos
-    parrafo.innerHTML = 'Tu mascota atacó con ' +  ataqueJugador + ', la mascosta del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultado //mensaje dinamico
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
 
-    sectionMensajes.appendChild(parrafo) //impresion de mensajes
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)//impresion de mensajes
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
 function crearMensajeFinal(resultadoFinal) { 
-    let sectionMensajes = document.getElementById('mensajes') //direcciona a donde debe aparecer en html
+    let sectionMensajes = document.getElementById('resultado') //direcciona a donde debe aparecer en html
 
-    let parrafo = document.createElement('p') //crea parrafos
-    parrafo.innerHTML =  resultadoFinal//mensaje dinamico
-
-    sectionMensajes.appendChild(parrafo) //impresion de mensajes
+    sectionMensajes.innerHTML = resultadoFinal
 
     let botonFuego = document.getElementById('boton-fuego') //llamado de boton
     botonFuego.disabled = true //desabilita boton
@@ -159,7 +163,6 @@ function crearMensajeFinal(resultadoFinal) {
 
     let botonTierra = document.getElementById('boton-tierra') //llamado de boton
     botonTierra.disabled = true //desabilita boton
-    
     
     let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'block' //muestra bloque
