@@ -31,7 +31,7 @@ html,body {
     font-family: monospace;
   }
   
-  .tarjetas {
+  .tarjetas, .tarjetas-ataques {
     display: flex;
     gap: 10px;
   }
@@ -128,7 +128,7 @@ input:checked + label {
   align-items: center;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 360px) { /*Adaptación para cualquier pantalla*/
   .tarjetas, .tarjetas-ataques {
     flex-direction: column;
   }
