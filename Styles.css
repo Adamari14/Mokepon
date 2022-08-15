@@ -1,16 +1,22 @@
 /*cssreference.io Para propiedades*/
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-body {
+html,body {
+  height:100%; /*Se ocupa en 100 de alto*/
+  margin:0;
+  display: flex;
+  flex-direction: column; /*si se agrega otro queda en columna*/
   font-family: 'Fredoka One', cursive; /*tipo de letra*/
   background-image: linear-gradient(45deg, rgb(140, 52, 199), rgb(255, 0, 106));
 }
+
 
 #Seleccionar-mascota {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 .titulo {
@@ -33,7 +39,8 @@ body {
 .tarjeta-de-mokepon{
     width: 200px;
     height: 100px;
-    background-image: linear-gradient(45deg,#77dd77,#7f4ca5);
+    background-image: linear-gradient(45deg,#ff8a53,#f3ff49);
+    border: 2px solid white;
     padding: 10px;/*borde interno*/
     box-sizing: border-box; /*se adapta al tamaño de la caja*/
     border-radius: 20px; /*borde externo*/
@@ -61,9 +68,12 @@ body {
 }
 
 input {
-    display: none;
+  display: none;
 }
 
+input:checked + label {
+  background-color: #5D8BF4;
+}
 
 #Seleccionar-ataque {
     display: flex;
@@ -72,19 +82,20 @@ input {
 }
   
 .boton-de-ataque {
-    background-image: radial-gradient( rgb(255, 109, 65), rgb(167, 247, 102));
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    border-color: transparent;
-    width: 180px;
-    color: black;
-    font-family: cursive;
+  background-image: linear-gradient(45deg,#ff8a53,#f3ff49);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 2px solid white;
+  width: 180px;
+  color: black;
+  font-family: cursive;
 }
 
 #mensajes {
   width: 280px;
   background: #EEEEEE;
+  border: 2px solid goldenrod;
   padding: 20px;
   margin-top: 20px;
   border-radius: 15px;
