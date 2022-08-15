@@ -58,9 +58,9 @@ html,body {
 }
 
 .tarjeta-de-mokepon:hover { /*interaccion de boton*/
-  background-image: linear-gradient(45deg,transparent,#00ffaa);
+  background-image: linear-gradient(45deg,white, #00ffaa);
   border: 2px solid goldenrod;
-  color: white;
+  color: black;
 }
 
 #boton-mascota {
@@ -75,8 +75,9 @@ html,body {
 }
 
 #boton-mascota:hover {
-  background-image: repeating-linear-gradient(90deg,transparent,#00ffaa);
+  background-image: repeating-linear-gradient(46deg,white,#00ffaa);
   border: 2px solid goldenrod;
+  color: black;
 }
 
 input {
@@ -84,7 +85,7 @@ input {
 }
 
 input:checked + label {
-  background-image: linear-gradient(45deg,transparent,#00ffaa);
+  background-image: linear-gradient(45deg,white,#00ffaa);
   border: 2px solid goldenrod;
 }
 
