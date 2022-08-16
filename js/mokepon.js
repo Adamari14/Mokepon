@@ -8,9 +8,7 @@ sectionReiniciar.style.display = 'none'
 const botonReiniciar = document.getElementById('boton-reiniciar')
 
 const sectionSeleccionarMascota = document.getElementById('Seleccionar-mascota')
-const inputHipodoge = document.getElementById('hipodoge') 
-const inputCapipepo = document.getElementById('capipepo')
-const inputRatigueya = document.getElementById('ratigueya')
+
 const spanMascotaJugador = document.getElementById('mascota-jugador')
 
 const spanMascotaEnemigo = document.getElementById('mascota-enemigo')
@@ -23,11 +21,13 @@ const ataquesDelJugador = document.getElementById('ataques-del-jugador')
 const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 const contenedorTarjetas = document.getElementById('contenedorTarjetas')
 
-let mokepones = []//Arreglo
-
-let ataqueJugador 
+let mokepones = [] //arreglo
+let ataqueJugador
 let ataqueEnemigo
 let opcionDeMokepones
+let inputHipodoge
+let inputCapipepo
+let inputRatigueya
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -77,15 +77,20 @@ function iniciarJuego(){ //llamado de eventos
     
     sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion, display para visibilidad
     
-    mokepones.forEach((Mokepon) => {//por cada mokepon se hace
-        opcionDeMokepones = ` 
-            <input type="radio" name="Mascota" id=${Mokepon.nombre}/> 
-            <label class="tarjeta-de-mokepon" for=${Mokepon.nombre}>
-                <p>${Mokepon.nombre}</p>
-                <img src=${Mokepon.foto} alt=${Mokepon.nombre}> 
-            </label>
-        `//extraer de html
-        contenedorTarjetas.innerHTML += opcionDeMokepones //cambia automatico en html
+    mokepones.forEach((mokepon) => { //por cada mokepon se hace
+        opcionDeMokepones = `
+        <input type="radio" name="mascota" id=${mokepon.nombre} />
+        <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
+            <p>${mokepon.nombre}</p>
+            <img src=${mokepon.foto} alt=${mokepon.nombre}>
+        </label>
+        `//extraer de Html
+    contenedorTarjetas.innerHTML += opcionDeMokepones
+
+     inputHipodoge = document.getElementById('Hipodoge')
+     inputCapipepo = document.getElementById('Capipepo')
+     inputRatigueya = document.getElementById('Ratigueya')
+
     })
 
     sectionReiniciar.style.display = 'none'
@@ -100,12 +105,8 @@ function iniciarJuego(){ //llamado de eventos
 function seleccionarMascotaJugador() {
     
     sectionSeleccionarMascota.style.display = 'none' //esconde bloque
-    
-    
     sectionSeleccionarAtaque.style.display = 'flex' //muestra bloque, bloque flex
 
-    
-     //cambio de nombre dinamico mascota-jugador
 
     if(inputHipodoge.checked) { //Manipulando DOM nombre de mascota-jugador
         spanMascotaJugador.innerHTML = 'Hipodoge'
