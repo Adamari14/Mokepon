@@ -22,23 +22,30 @@ const sectionMensajes = document.getElementById('resultado')
 const ataquesDelJugador = document.getElementById('ataques-del-jugador')
 const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 
+let mokepones = []//Arreglo
 
-let ataqueJugador //variable global
+let ataqueJugador 
 let ataqueEnemigo
-let vidasJugador = 3 //para contador de vidas
+let vidasJugador = 3
 let vidasEnemigo = 3
 
+//CLASE
 class Mokepon{
-    constructor(nombre, foto, vida){
+    constructor(nombre, foto, vida){ //argumentos de esa clase
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
     }
 }
 
-let hipodoge = new Mokepon('hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
+//OBJETOS
+let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
 let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5)
+let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
+mokepones.push(hipodoge, capipepo, ratigueya)//Agregar al arreglo
+
+console.log(mokepones)
 
 function iniciarJuego(){ //llamado de eventos
     
