@@ -107,13 +107,12 @@ function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none' //esconde bloque
     sectionSeleccionarAtaque.style.display = 'flex' //muestra bloque, bloque flex
 
-
     if(inputHipodoge.checked) { //Manipulando DOM nombre de mascota-jugador
-        spanMascotaJugador.innerHTML = 'Hipodoge'
+        spanMascotaJugador.innerHTML = inputHipodoge.id
     } else if(inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML = 'Capipepo'
+        spanMascotaJugador.innerHTML = inputCapipepo.id
     } else if(inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = 'Ratigueya'
+        spanMascotaJugador.innerHTML = inputRatigueya.id
     } else {
         alert("Selecciona una mascota")
     }   
