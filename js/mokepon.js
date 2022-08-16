@@ -121,16 +121,9 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo(){
-    let mascotaAleatoria = aleatorio(1,3)
-     //cambio de nombre dinamico mascota-enemigo
+    let mascotaAleatoria = aleatorio(0,mokepones.length -1)//el rango depende de la longitud del arreglo
 
-    if(mascotaAleatoria == 1){ //Manipulando DOM nombre de mascota-enemigo
-        spanMascotaEnemigo.innerHTML = 'Hipodoge'
-    } else if (mascotaAleatoria == 2){
-        spanMascotaEnemigo.innerHTML = 'Capipepo'
-    } else {
-        spanMascotaEnemigo.innerHTML = 'Ratigueya'
-    } 
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
 }
 
 function ataqueFuego(){
