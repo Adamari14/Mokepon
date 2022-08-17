@@ -34,8 +34,8 @@ let indexAtaqueJugador
 let indexAtaqueEnemigo
 let victoriasJugador=0
 let victoriasEnemigo=0
-let vidasJugador=5
-let vidasEnemigo=5
+let vidasJugador=3
+let vidasEnemigo=3
 
 //CLASE
 class Mokepon{
@@ -160,14 +160,17 @@ function secuenciaAtaque(){
                 ataqueJugador.push('FUEGO')
                 console.log(ataqueJugador)
                 boton.style.background = '#3F4E4F'
+                boton.disabled = true   
            } else if(e.target.textContent === '💧'){
                 ataqueJugador.push('AGUA')
                 console.log(ataqueJugador)
                 boton.style.background = '#3F4E4F'
+                boton.disabled = true   
            } else {
                 ataqueJugador.push('TIERRA')
                 console.log(ataqueJugador)
                 boton.style.background = '#3F4E4F'
+                boton.disabled = true   
            }
            ataqueAleatorioEnemigo()
         })
@@ -216,27 +219,31 @@ function combate(){
         if(ataqueJugador[index] == ataqueEnemigo[index]) {
             indexAmbosOponente(index,index)
             crearMensaje("EMPATE👀")
-            spanVidasJugador.innerHTML=victoriasJugador
-        } else if(ataqueJugador[index]==='FUEGO 🔥'&&ataqueEnemigo[index]==='TIERRA 🌱') {
+            spanVidasJugador.innerHTML = victoriasJugador
+
+        } else if(ataqueJugador[index]==='FUEGO 🔥' && ataqueEnemigo[index]==='TIERRA 🌱') {
+            indexAmbosOponente(index,index)
+            crearMensaje("GANASTE😄")
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+
+         }else if(ataqueJugador[index]==='AGUA 💧' && ataqueEnemigo[index]==='FUEGO 🔥') {
             indexAmbosOponente(index,index)
             crearMensaje("GANASTE😄")
             victoriasJugador++
             spanVidasJugador.innerHTML=victoriasJugador
-         }else if(ataqueJugador[index]==='AGUA 💧'&&ataqueEnemigo[index]==='FUEGO 🔥') {
+
+        } else if(ataqueJugador[index] ==='TIERRA 🌱' && ataqueEnemigo[index]==='AGUA 💧') {
             indexAmbosOponente(index,index)
             crearMensaje("GANASTE😄")
             victoriasJugador++
             spanVidasJugador.innerHTML=victoriasJugador
-        } else if(ataqueJugador[index]==='TIERRA 🌱'&&ataqueEnemigo[index]==='AGUA 💧') {
-            indexAmbosOponente(index,index)
-            crearMensaje("GANASTE😄")
-            victoriasJugador++
-            spanVidasJugador.innerHTML=victoriasJugador
+
         } else {
             indexAmbosOponente(index,index)
             crearMensaje("PERDISTE 😢")
             victoriasEnemigo++
-            spanVidasEnemigo.innerHTML=victoriasEnemigo
+            spanVidasEnemigo.innerHTML = victoriasEnemigo
         }
     }
     revisarVidas()
@@ -259,10 +266,10 @@ function crearMensaje(resultado) { //Creación de historial de mensajes
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
     sectionMensajes.innerHTML = resultado
-    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
-    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+    nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
 
-    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)//impresion de mensajes
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
     ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
@@ -270,10 +277,7 @@ function crearMensajeFinal(resultadoFinal) {
      //direcciona a donde debe aparecer en html
     sectionMensajes.innerHTML = resultadoFinal
 
-     //llamado de boton
-    botonFuego.disabled = true //desabilita boton
-    botonAgua.disabled = true
-    botonTierra.disabled = true
+
 
     sectionReiniciar.style.display = 'block' //muestra bloque
 
