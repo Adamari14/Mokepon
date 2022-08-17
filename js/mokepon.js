@@ -3,13 +3,10 @@ const sectionReiniciar = document.getElementById('reiniciar')
 const botonMascotaJugador = document.getElementById('boton-mascota')
 sectionReiniciar.style.display = 'none'
 const botonReiniciar = document.getElementById('boton-reiniciar')
-
 const sectionSeleccionarMascota = document.getElementById('Seleccionar-mascota')
 
 const spanMascotaJugador = document.getElementById('mascota-jugador')
-
 const spanMascotaEnemigo = document.getElementById('mascota-enemigo')
-
 const spanVidasJugador = document.getElementById('vidas-jugador')
 const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 
@@ -33,6 +30,8 @@ let botonFuego
 let botonAgua
 let botonTierra
 let botones = []
+let indexAtaqueJugador
+let indexAtaqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -195,39 +194,28 @@ function ataqueAleatorioEnemigo(){
     }
 
     console.log(ataqueEnemigo)
-    
-    combate()
+    iniciarPelea()
+}
+
+function iniciarPelea(){
+    if(ataqueJugador.length === 5){
+        combate()
+    }
+}
+
+function indexAmbosOponente(jugador, enemigo) {
+    indexAtaqueJugador = ataqueEnemigo[jugador]
+    indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
 
 function combate(){
-    
-    
 
-    if(ataqueEnemigo == ataqueJugador){
-        crearMensaje("EMPATE 😐")
-
-    } else if(ataqueJugador == 'FUEGO 🔥' && ataqueEnemigo == 'TIERRA 🌱'){
-        crearMensaje("GANASTE 😄")
-        vidasEnemigo-- //contador
-        spanVidasEnemigo.innerHTML = vidasEnemigo //cambio dinamico
-
-    } else if(ataqueJugador == 'AGUA 💧' && ataqueEnemigo == 'FUEGO 🔥'){
-        crearMensaje("GANASTE 😄")
-        vidasEnemigo-- //contador
-        spanVidasEnemigo.innerHTML = vidasEnemigo //cambio dinamico
-
-    } else if(ataqueJugador == 'TIERRA 🌱' && ataqueEnemigo == 'AGUA 💧'){
-        crearMensaje("GANASTE 😄")
-        vidasEnemigo-- //contador
-        spanVidasEnemigo.innerHTML = vidasEnemigo //cambio dinamico
-
-    } else {
-        crearMensaje("PERDISTE 😢")
-        vidasJugador-- //contador
-        spanVidasJugador.innerHTML = vidasJugador //cambio dinamico
-
+    for (let index = 0; index < ataqueJugador.length; index++) {
+        if (ataqueJugador[index] == ataqueEnemigo[index]) {
+            indexAmbosOponente(index, index)
+            crearMensaje("EMPATE")
+        }      
     }
-
     revisarVidas()
 }
 
@@ -255,19 +243,13 @@ function crearMensaje(resultado) { //Creación de historial de mensajes
 
 function crearMensajeFinal(resultadoFinal) { 
      //direcciona a donde debe aparecer en html
-
     sectionMensajes.innerHTML = resultadoFinal
 
      //llamado de boton
     botonFuego.disabled = true //desabilita boton
+    botonAgua.disabled = true
+    botonTierra.disabled = true
 
-     //llamado de boton
-    botonAgua.disabled = true //desabilita boton
-
-     //llamado de boton
-    botonTierra.disabled = true //desabilita boton
-    
-    
     sectionReiniciar.style.display = 'block' //muestra bloque
 
 }
