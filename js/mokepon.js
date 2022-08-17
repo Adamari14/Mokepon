@@ -32,8 +32,10 @@ let botonTierra
 let botones = []
 let indexAtaqueJugador
 let indexAtaqueEnemigo
-let vidasJugador = 3
-let vidasEnemigo = 3
+let victoriasJugador=0
+let victoriasEnemigo=0
+let vidasJugador=5
+let vidasEnemigo=5
 
 //CLASE
 class Mokepon{
@@ -204,27 +206,50 @@ function iniciarPelea(){
 }
 
 function indexAmbosOponente(jugador, enemigo) {
-    indexAtaqueJugador = ataqueEnemigo[jugador]
+    indexAtaqueJugador = ataqueJugador[jugador]
     indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
 
 function combate(){
 
-    for (let index = 0; index < ataqueJugador.length; index++) {
-        if (ataqueJugador[index] == ataqueEnemigo[index]) {
-            indexAmbosOponente(index, index)
-            crearMensaje("EMPATE")
-        }      
+    for(let index=0;index<ataqueJugador.length;index++) {
+        if(ataqueJugador[index] == ataqueEnemigo[index]) {
+            indexAmbosOponente(index,index)
+            crearMensaje("EMPATE👀")
+            spanVidasJugador.innerHTML=victoriasJugador
+        } else if(ataqueJugador[index]==='FUEGO 🔥'&&ataqueEnemigo[index]==='TIERRA 🌱') {
+            indexAmbosOponente(index,index)
+            crearMensaje("GANASTE😄")
+            victoriasJugador++
+            spanVidasJugador.innerHTML=victoriasJugador
+         }else if(ataqueJugador[index]==='AGUA 💧'&&ataqueEnemigo[index]==='FUEGO 🔥') {
+            indexAmbosOponente(index,index)
+            crearMensaje("GANASTE😄")
+            victoriasJugador++
+            spanVidasJugador.innerHTML=victoriasJugador
+        } else if(ataqueJugador[index]==='TIERRA 🌱'&&ataqueEnemigo[index]==='AGUA 💧') {
+            indexAmbosOponente(index,index)
+            crearMensaje("GANASTE😄")
+            victoriasJugador++
+            spanVidasJugador.innerHTML=victoriasJugador
+        } else {
+            indexAmbosOponente(index,index)
+            crearMensaje("PERDISTE 😢")
+            victoriasEnemigo++
+            spanVidasEnemigo.innerHTML=victoriasEnemigo
+        }
     }
     revisarVidas()
 }
 
 function revisarVidas(){
-    if(vidasEnemigo == 0){
-        crearMensajeFinal('FELICITACIONES! GANASTE 🎉')
-    } else if(vidasJugador == 0){
+    if(victoriasJugador===victoriasEnemigo){
+        crearMensajeFinal("Esto fue un empate!!! 😲")
+    } else if(victoriasJugador>victoriasEnemigo){
+        crearMensajeFinal("FELICITACIONES! GANASTE 🎉")
+    }else{
         crearMensajeFinal('SUERTE PARA LA PROXIMA! PERDISTE 🥺')
-    } 
+    }
 }
 
 function crearMensaje(resultado) { //Creación de historial de mensajes
