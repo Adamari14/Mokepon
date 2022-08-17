@@ -157,17 +157,17 @@ function secuenciaAtaque(){
     botones.forEach((boton) => {
         boton.addEventListener('click', (e) =>{
            if(e.target.textContent === '🔥'){
-                ataqueJugador.push('FUEGO')
+                ataqueJugador.push('FUEGO 🔥')
                 console.log(ataqueJugador)
                 boton.style.background = '#3F4E4F'
                 boton.disabled = true   
            } else if(e.target.textContent === '💧'){
-                ataqueJugador.push('AGUA')
+                ataqueJugador.push('AGUA 💧')
                 console.log(ataqueJugador)
                 boton.style.background = '#3F4E4F'
                 boton.disabled = true   
            } else {
-                ataqueJugador.push('TIERRA')
+                ataqueJugador.push('TIERRA 🌱')
                 console.log(ataqueJugador)
                 boton.style.background = '#3F4E4F'
                 boton.disabled = true   
@@ -268,6 +268,7 @@ function crearMensaje(resultado) { //Creación de historial de mensajes
     sectionMensajes.innerHTML = resultado
     nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
+    
 
     ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
     ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
